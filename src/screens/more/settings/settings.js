@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, FlatList, Switch } from 'react-nat
 import { Images, Colors } from '../../../theme';
 import styles from './styles'
 import { hp, wp } from '../../../utils/heightWidthRatio';
-import FilterModal from '../../../components/modals/filterModal'
+import {FilterModal1} from '../../../components/modals/filterModal'
 
 export default class Wallet extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ export default class Wallet extends Component {
     return (
       <View style={styles.mainContainer}>
         
-        <FilterModal
+        <FilterModal1
           visible={langModalVisible}
           title={'select Language'}
           selectedValue={language}
@@ -45,7 +45,7 @@ export default class Wallet extends Component {
           idKey={"name"}
         />
 
-        <FilterModal
+        <FilterModal1
           visible={countryModalVisible}
           title={'select Country'}
           selectedValue={country}

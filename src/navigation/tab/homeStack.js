@@ -9,6 +9,7 @@ import AddPickupDrop from '../../screens/home/addPickupDrop/addPickupDrop';
 import addPassenger from '../../screens/home/addPassenger/addPassenger';
 import payment from '../../screens/home/payment/payment';
 import payment2 from '../../screens/home/payment2/payment2';
+import bookingDetails from '../../screens/booking/bookingDetails';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +27,7 @@ function ActivityStackNavigator({ navigation, route }) {
           {/*<Stack.Screen name="AddPassenger" component={addPassenger} options={{ headerShown: false  }} />*/}
           <Stack.Screen name="Payment" component={payment} options={{ headerShown: false  }} />
           <Stack.Screen name="Payment2" component={payment2} options={{ headerShown: false  }} />
+          <Stack.Screen name="BookingDetails" component={bookingDetails} options={{ headerShown: false,  }} />
         </Stack.Navigator>
     );
   }

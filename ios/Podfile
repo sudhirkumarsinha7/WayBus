@@ -2,13 +2,15 @@ require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 platform :ios, '10.0'
+ 
 
 target 'WayBus' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+  pod 'Firebase/Analytics'
+  pod 'GoogleSignIn', '~> 5.0.2'
 
   target 'WayBusTests' do
     inherit! :complete
@@ -19,7 +21,7 @@ target 'WayBus' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable these next few lines.
-  use_flipper!
+  use_flipper!({ 'Flipper' => '0.74.0' })
   post_install do |installer|
     flipper_post_install(installer)
   end

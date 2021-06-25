@@ -1,2 +1,11 @@
 // export const BASE_URL = "http://18.234.142.147:3001"
-export const BASE_URL = "https://api.waybus.in"
+export const BASE_URL = "https://api.waybus.in" //Prod
+// const env = 'prod' //'test'
+// export const BASE_URL = "https://devapi.waybus.in" //Test
+export const GAPI_WEB_CLIENT_ID = "961099642355-hl0ddkf3em620amvit8qmq3e0e06qri5.apps.googleusercontent.com"
+export const GAPI_WEB_CLIENT_SECRET = "W9Q7TE1goaZ4CzE2gLhFCHi5"
+export const GOIS_WEB_CLIENT_ID = "961099642355-jfheks7d2m00l6dgc6mrq27oes00sngd.apps.googleusercontent.com"
+export const ACCESS_TOKEN = '@WAYBUS_AUTHORIZATION';
+export const SESSION_KEY = '@WAYBUS_USER';
+export const DATE_FORMAT = 'DD-MM-YYYY';
+export const PAYMENT_MODE = 'prod';/*'prod/test'*/

@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 
 function LoginStackNavigator() {
     return(
-        <Stack.Navigator initialRouteName="Login" screenOptions={{...(Platform.OS === "android" && TransitionPresets.SlideFromRightIOS) }}>
+        <Stack.Navigator initialRouteName="Login" >
             <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
             <Stack.Screen name="Otp" component={Otp} options={{headerShown: false}}/>
         </Stack.Navigator>

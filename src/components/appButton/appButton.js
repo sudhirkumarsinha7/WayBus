@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity,TouchableWithoutFeedback } from 'react-native';
 import { Fonts, Colors } from '../../theme';
 import {wp,hp} from '../../utils/heightWidthRatio';
 

@@ -15,7 +15,7 @@ const path = {
     downArrow: require('../res/image/downArrow.png'),
     google: require('../res/image/google.png'),
     fb: require('../res/image/fb.png'),
-    waybusWhiteLogo: require('../res/image/waybusWhiteLogo.png'),
+    waybusWhiteLogo: require('../res/image/ic_launcher.png'),
     twoPin: require('../res/image/twoPin.png'),
     sleeper: require('../res/image/sleeper.png'),
     seater: require('../res/image/seater.png'),

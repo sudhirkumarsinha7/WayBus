@@ -36,6 +36,11 @@ const styles = StyleSheet.create({
     whiteContent: {
         color: Colors.whiteF4,
         fontSize: Fonts.size.font14,
+        backgroundColor: Colors.blueTheme, 
+        borderRadius: 20,
+        padding: 5,
+        paddingLeft:10,
+        paddingRight:10,
     },
     blueContent : {
         color: Colors.blueTheme,
@@ -77,7 +82,7 @@ const styles = StyleSheet.create({
     },
     eachContainer : {
         backgroundColor: Colors.whiteFF, 
-        borderRadius : wp(7),
+        /* borderRadius : wp(7), */
         padding : wp(10),
         flexDirection:'row',
         justifyContent:'space-between',
@@ -86,9 +91,17 @@ const styles = StyleSheet.create({
     },
     blueButton : {
         backgroundColor: Colors.blueTheme, 
-        borderRadius : wp(5),
+        /* borderRadius : wp(5), */
         justifyContent:'center',
         alignItems:'center',
+        // paddingTop:wp(3),
+        // paddingBottom:wp(5),
+        paddingLeft:wp(12),
+        paddingRight:wp(12),
+        borderRadius:10,
+    },
+    blueButtonLa : {
+        backgroundColor: Colors.blueTheme, 
         paddingTop:wp(7),
         paddingBottom:wp(7),
         paddingLeft:wp(12),

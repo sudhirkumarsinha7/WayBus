@@ -8,17 +8,14 @@ import AppButton from '../../../components/appButton/appButton';
 import * as actions from '../../../redux/action';
 import { connect } from 'react-redux';
 import { WebView } from 'react-native-webview';
-import { BASE_URL } from '../../../api/constant';
-
-var CryptoJS = require("crypto-js");
+import { PAYMENT_MODE } from '../../../api/constant';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {SESSION_KEY, ACCESS_TOKEN} from '../../../api/constant';
 
 class payment extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      paymentTypes : [{id:1, name : 'Net Banking', image:Images.card}, {id:2, name : 'Credit Card', image:Images.card},{id:3, name : 'Debit Card', image:Images.wallet},{id:4, name : 'Mobile Wallet', image:Images.wallet},],
-      view : [1],
-
       commonErr : '',
       fareInfo : null,
       busDetails : null,
@@ -28,128 +25,28 @@ class payment extends Component {
       pnr : '',
 
       config : null,
-      webViewData : ''
+      webViewData : '',
+      tickedBookedSuccess: false,
+      ticketDetails: null
     };
     this.formRef = React.createRef();
   }
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     console.log('this.props.route.params');
-    console.log(this.props.route.params);
-
+    console.log(this.props.route.params)
     this.setState({
       fareInfo : this.props.route.params.fareInfo,
       busDetails : this.props.route.params.busDetails
     })
     console.log(this.props.route.params.busDetails);
 
-    this.getWebViewPaymentData();
-    // var data = { ...this.state.config , 
-    //   accessCode : 'AVKR03HI38AD28RKDA' , 
-    //   workingKey : '24A31EE1524E1CB34BCBF2DD0CB4F911' , 
-    //   paymentUrl : 'https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction',
-    //   merchantId : '271029',
-    //   currency : 'INR',
-    //   BASE_URL : BASE_URL,
-    //   merchantConviniencePercent: 2,
-    // } ;
-    
-    //prod :
-    // var data = { ...this.state.config , 
-    //   accessCode : 'AVDQ94HH54CA56QDAC' , 
-    //   workingKey : 'D9730E7F6421014656862D2EE09A6311' , 
-    //   paymentUrl : 'https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction',
-    //   merchantId : '271029',
-    //   currency : 'INR',
-    //   BASE_URL : BASE_URL,
-    //   merchantConviniencePercent: 2,
-    // } ;
-    
-
-    // this.setState({
-    //   config : data
-    // });
-
-    // this.encrypting("merchant_id=271029&order_id=1617122058&currency=INR&amount=1287.45&redirect_url=https://api.waybus.in/ccavResponse&cancel_url=https://api.waybus.in/ccavResponse&language=EN&billing_country=India&billing_tel=9464649494&billing_email=Test@gmail.com");
-
   }
 
-  encrypting = (data) => {
-    var ciphertext = CryptoJS.AES.encrypt(data, '24A31EE1524E1CB34BCBF2DD0CB4F911');
-    console.log("encrypted text", ciphertext.toString());
-
-    this.setState({
-      encRequest : ciphertext.toString()
-    })
-
-
-    var bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), '24A31EE1524E1CB34BCBF2DD0CB4F911');
-    var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-    console.log("decrypted text", plaintext);
-  }
-
-  getWebViewPaymentData = () => {
-    //test :
-    var data = { ...this.state.config , 
-      accessCode : 'AVKR03HI38AD28RKDA' , 
-      workingKey : '24A31EE1524E1CB34BCBF2DD0CB4F911' , 
-      paymentUrl : 'https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction',
-      merchantId : '271029',
-      currency : 'INR',
-      BASE_URL : BASE_URL,
-      merchantConviniencePercent: 2,
-    } ;
-    
-    //prod :
-    // var data = { ...this.state.config , 
-    //   accessCode : 'AVDQ94HH54CA56QDAC' , 
-    //   workingKey : 'D9730E7F6421014656862D2EE09A6311' , 
-    //   paymentUrl : 'https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction',
-    //   merchantId : '271029',
-    //   currency : 'INR',
-    //   BASE_URL : BASE_URL,
-    //   merchantConviniencePercent: 2,
-    // } ;
-    
-
-    this.setState({
-      config : data
-    });
-
-    const orderId = Math.round((new Date()).getTime() / 1000);
-
-    var body = `merchant_id=${
-                 // this.state.config.merchantId
-                 data.merchantId
-               }&order_id=${orderId}&currency=${
-                 // this.state.config.currency
-                 data.currency
-               }&amount=${
-                 this.props.route.params.fareInfo.finalAmount
-               }&redirect_url=${BASE_URL}/ccavResponse&cancel_url=${BASE_URL}/ccavResponse&language=EN&billing_country=India&billing_tel=${
-                 this.props.route.params.contactDetail.mobile_number
-               }&billing_email=${
-                 this.props.route.params.contactDetail.email
-               }`;
-
-    console.log('config');           
-    console.log(data);           
-    console.log('body');           
-    console.log(body);
-
-    // this.encrypting("merchant_id=271029&order_id=1617122058&currency=INR&amount=1287.45&redirect_url=https://api.waybus.in/ccavResponse&cancel_url=https://api.waybus.in/ccavResponse&language=EN&billing_country=India&billing_tel=9464649494&billing_email=Test@gmail.com");
-    this.encrypting(body);
-    
-    this.setState({
-      webViewData : body
-    })           
-
-  }
-
-onTentativeBooking = () => {
+  onTentativeBooking = () => {
+    this.setState({isLoading : true});
     const { tentativeBooking,navigation } = this.props
     const { scheduleId, passengerTypes, selectedPickup, selectedDrop, date, originId, destId, contactDetail } = this.props.route.params;
-
     if(moment(date).format('YYYY-MM-DD') < moment(new Date()).format('YYYY-MM-DD')){
       console.log("date is greater than today's date");
       this.props.navigation.navigate('Home');
@@ -198,7 +95,7 @@ onTentativeBooking = () => {
     console.log(id);
     console.log(orderId);
 
-    this.setState({isLoading : true});
+    
 
     tentativeBooking(id,orderId, data)
     .then((res)=>{
@@ -206,20 +103,28 @@ onTentativeBooking = () => {
       console.log(res);
       if(res.payload.status==200){
         console.log('adding passenger');
-        // console.log(res.payload.data);
         console.log(res.payload.data.result);
         if(res.payload.data.result){
           if(res.payload.data.result.ticket_details){
             var tktDetails = res.payload.data.result.ticket_details;
-
-            this.setState({
-              pnr : tktDetails.pnr_number,
-              showModal : true
+            const {mobilePayment} = this.props;
+            const { contactDetail, fareInfo } = this.props.route.params;
+            
+            const requestHeader = {
+              amount: fareInfo.finalAmount,
+              email: contactDetail.email,
+              contact: contactDetail.mobile_number,
+              sourceType: PAYMENT_MODE,
+              orderId
+            }
+            console.log('mobilePayment requestHeader'+ JSON.stringify(requestHeader))
+            mobilePayment(requestHeader).then((res) => {
+              console.log('mobilePayment res'+ JSON.stringify(res))
+              this.setState({ 
+                webViewData: res.payload.data,
+                pnr: tktDetails.pnr_number, showModal: true
+              });
             });
-            // this.onConfirmPayment(tktDetails.pnr_number);
-            // "https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"
-             // this.props.navigation.navigate('Payment2')
-            // this.props.navigation.navigate('Payment', {tktDetails : res.payload.data.result.ticket_details , scheduleId : this.props.route.params.scheduleId, fareInfo : this.props.route.params.fareInfo}); 
           }
         }else {
           console.log(res.payload.data.response.message);
@@ -231,76 +136,81 @@ onTentativeBooking = () => {
     })
   }
 
-    // onConfirmPayment = (pnrN) => {
-    //   const { confirmPayment,navigation } = this.props;
-    //   var pnr = this.state.pnr ;
-    //   console.log(pnrN);
-    //   console.log(pnr);
-    //   this.setState({isLoading : true});
+    onConfirmPayment = async (pnrN) => {
+      const { confirmPayment,navigation } = this.props;
+      const { contactDetail, fareInfo } = this.props.route.params;
+      const {pnr, webViewData} = this.state;
+      var data = await AsyncStorage.getItem(SESSION_KEY);
+      data = JSON.parse(data);
+      let userId ='';
+      if(data){
+        userId = data.email || data.mobile;
+      }
+      console.log(pnrN);
+      console.log(pnr);
+      console.log(pnr);
+      this.setState({isLoading : true});
+      const request = {
+        user:  data.email || data.mobile,
+        phone: contactDetail.mobile_number,
+        email: contactDetail.email,
+        gst: fareInfo.gst,
+        order_id: webViewData.orderId,
+        discount: fareInfo.discount,
+        convenienceFee: parseFloat(fareInfo.operatorFee) + parseFloat(fareInfo.merchantFee)
+      }
+      console.log('confirmPayment request '+ JSON.stringify(request));
+      console.log('confirmPayment pnr '+ JSON.stringify(pnr));
+      confirmPayment(pnr, request)
+      .then((res)=>{
+        console.log('confirmPayment res '+ JSON.stringify(res));
+        if(res.payload.status==200){
+          console.log('confirm booking');
+          console.log(res.payload);
+          console.log(res.payload.data);
+          console.log(res.payload.data.result);
+          if(res.payload.data.result){
+            if(res.payload.data.result.ticket_details){
+              this.setState({showModal : false, tickedBookedSuccess: true, ticketDetails: res.payload.data.result.ticket_details});
+              //  this.props.navigation.navigate('Booking');
+            }
+          }else {
+            console.log(res.payload.data.response.message);
+          }
 
-    //   confirmPayment(pnrN)
-    //   .then((res)=>{
-    //     console.log('res');
-    //     console.log(res);
-    //     if(res.payload.status==200){
-    //       console.log('confirm booking');
-    //       console.log(res.payload);
-    //       console.log(res.payload.data);
-    //       console.log(res.payload.data.result);
-    //       if(res.payload.data.result){
-    //         if(res.payload.data.result.ticket_details){
-    //           // this.setState({showModal : true});
-    //            this.props.navigation.navigate('Booking');
-    //         }
-    //       }else {
-    //         console.log(res.payload.data.response.message);
-    //       }
-
-    //     }else{
-    //       console.log('res false');
-    //       console.log(res);
-    //     }
-    //     this.setState({isLoading : false});
-    //   })  
-    // }
+        }else{
+          console.log('res false');
+          console.log(res);
+        }
+        this.setState({isLoading : false});
+      })  
+    }
 
   sendRequest(val) {
     console.log(val);
     this.setState({ selectedGender: val })
   }
 
+
+
   _onNavigationStateChange = async (webViewState) => {
-      console.log('webViewState.url');
-      console.log(webViewState);
-      console.log(webViewState.url);
-      var url = webViewState.url;
-      console.log('url');
-      console.log(url);
-      console.log(url.split('?')[0]);
-
-      // console.log("https://daycarepanel.stage02.obdemo.com/api/v1/transactionsuccessful?status=succeeded&transaction_id=ch_1IWb8LER2uSW8gLnqywqZ6JZ");
-
-      // if (url.split('?')[0] == 'https://daycarepanel.stage02.obdemo.com/api/v1/transactionsuccessful') {
-      //     var res = url.split('?')[1];
-      //     console.log('res ' + res);
-
-      //     var status = res.split('&')[0].split('=')[1];
-      //     var transID = res.split('&')[1].split('=')[1];
-      //     console.log(transID);
-      //     console.log(status);
-
-      //     this.setState({
-      //         transactionId: transID,
-      //         showModal: false
-      //     });
-
-      //     if (this.state.kid_id) {
-      //         this.onKidPayment(transID, status);
-      //     } else {
-      //         this.onCheckout(transID, status);
-      //     }
-      // }
+    console.log('_onNavigationStateChange webViewState.url');
+    // console.log(webViewState);
+    // console.log(webViewState.url);
+    var url = webViewState.url;
+    console.log('_onNavigationStateChange webViewState' + JSON.stringify(webViewState));
+    // console.log(webViewState.title);
+    console.log(url.split('?')[0]);
+    let str = url.split('?')[0];
+    let splitData = str.split("/")
+    let proessCheck =  splitData[splitData.length - 1];
+    // if (webViewState.title === "Payment Success") {
+      if (webViewState.title === "Payment Success"|| proessCheck==='processNbkReq') {
+      // success payment will give the status with title
+      this.onConfirmPayment(this.state.pnr);
+    }
   }
+
 
   ActivityIndicatorLoadingView() {
     return (
@@ -317,21 +227,48 @@ onTentativeBooking = () => {
   render() {
     console.log('this.state.encRequest');
     console.log(this.state.encRequest);
+    const { busDetails, fareInfo , isLoading, webViewData, tickedBookedSuccess, pnr, ticketDetails} = this.state;
+    if (tickedBookedSuccess) {
+      return (
+        <View style={styles.mainContainer}>
+          <View style={styles.locationContainer}>
+            <View style={{ flex: 1 }}>
+              <View style={styles.itemContainer}>
+                <Text style={[styles.grayContent, { fontSize: Fonts.size.font18, marginBottom: 10, alignSelf: 'center', textDecorationLine: 'underline' }]}>Ticket Booked Succesfully</Text>
+                <View style={{ flexDirection: 'row' }}>
+                  <Text style={[styles.lightGrayContent, { flex: 1 }]}>PNR</Text>
+                  <Text style={styles.lightGrayContent}>:</Text>
+                  <Text style={[styles.lightGrayContent, { flex: 1, textAlign: 'right' }]}>{pnr}</Text>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                  <Text style={[styles.lightGrayContent, { flex: 1 }]}>Status</Text>
+                  <Text style={styles.lightGrayContent}>:</Text>
+                  <Text style={[styles.lightGrayContent, { flex: 1, textAlign: 'right' }]}>{ticketDetails.ticket_status}</Text>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                  <Text style={[styles.lightGrayContent, { flex: 1 }]}>Origin</Text>
+                  <Text style={styles.lightGrayContent}>:</Text>
+                  <Text style={[styles.lightGrayContent, { flex: 1, textAlign: 'right' }]}>{ticketDetails.origin}</Text>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                  <Text style={[styles.lightGrayContent, { flex: 1 }]}>Destination</Text>
+                  <Text style={styles.lightGrayContent}>:</Text>
+                  <Text style={[styles.lightGrayContent, { flex: 1, textAlign: 'right' }]}>{ticketDetails.destination}</Text>
+                </View>
+                <TouchableOpacity
+                    style={{ flexDirection: 'row',justifyContent: 'center', alignItems: 'center', backgroundColor:'green'}}
+                    onPress={()=>{this.props.navigation.push('Home');this.props.navigation.navigate('Booking')}}>
+                  
+                      <Text style={{fontWeight:'bold', color: 'white',fontSize: 20}}>ok</Text>
+                  
+                </TouchableOpacity>
 
-    const webViewScript =`
-      <form id="nonseamless"
-          ref = {this.formRef}
-           method="POST"
-           name="redirect"
-           action={'https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction'}>
-       <input type="hidden" id="encRequest" name="encRequest" value={this.state.encRequest} />
-       <input type="hidden" name="access_code" id="access_code" value={'AVKR03HI38AD28RKDA'} />
-       <Button type="submit" bsStyle="primary" className="submitBtn">Pay Now</Button>
-       <script language="javascript">document.redirect.submit();</script>
-    </form>
-    `;
-
-    const { paymentTypes, view, busDetails, fareInfo , isLoading} = this.state
+              </View>
+            </View>
+          </View>
+        </View>
+      )
+    }
     return (
       <View style={styles.mainContainer}>
         <Modal
@@ -348,17 +285,14 @@ onTentativeBooking = () => {
               <View style={{ height: '95%', width: '100%' }}>
                 <WebView
                   style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-
-                  source={{ uri: 'https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction' }}
-
+                  source={{ uri: `${webViewData.paymentUrl}/transaction.do?command=initiateTransaction&encRequest=${
+                    webViewData.encRequest
+                  }&access_code=${
+                    webViewData.accessCode
+                  }`}}
                   onNavigationStateChange={this._onNavigationStateChange.bind(this)}
                   renderLoading={this.ActivityIndicatorLoadingView}
                   startInLoadingState={true}
-
-                  injectedJavaScript={
-                    webViewScript
-                  }
-
                 />
               </View>
             </View>
@@ -454,51 +388,20 @@ onTentativeBooking = () => {
             {this.state.commonErr ? (
               <Text style={{color : 'red', fontSize:13}}>{this.state.commonErr ? this.state.commonErr : ''}</Text>
             ) : null}
+           <ActivityIndicator size="large" color={Colors.blueTheme} animating={isLoading} style={{bottom:Dimensions.get('window').height/1.8}} />
 
             <AppButton
               testId={"Payment"}
               title={"Pay Now"}
               type={'withoutContainer'}
-              disable={false}
+              disable={isLoading}
               containerStyle={{ alignSelf: 'center' }}
               buttonPressed={() => { 
                 this.onTentativeBooking() 
               }}
             />
-
-            {/*<FlatList
-              data={view}
-              showsVerticalScrollIndicator = {false}
-              renderItem={({ item, index}) => (
-                <View>
-                  <Text style={[styles.grayContent, {marginBottom:5}]}>Select Payment Method</Text>
-                  <FlatList
-                    data={paymentTypes}
-                    scrollEnabled = {false}
-                    renderItem={({ item, index}) => (
-                      
-                      <TouchableOpacity onPress={() => this.onTentativeBooking()} style={styles.itemContainer}>
-                        <View style={[styles.rowContent, {padding:0}]}>
-                          <View style={{flexDirection : 'row', alignItems:'center'}}>
-                            <Image style={[styles.smallIcon, {marginLeft:0}]} source={item.image} />
-                            <Text style={styles.lightGrayContent}>{item.name}</Text>
-                          </View>
-                          <Image style={styles.icon} source={Images.rightArrow} />
-                        </View>  
-                      </TouchableOpacity>
-
-                    )}
-                    keyExtractor = {item=> {item.id}}
-                  />  
-                </View>   
-
-              )}
-                keyExtractor = {item=> {item}}
-            />*/}
-
           </View>  
         </View>
-        <ActivityIndicator size="large" color={Colors.blueTheme} animating={isLoading} style={{bottom:Dimensions.get('window').height/1.8}} />
       </View>
     );
   }
@@ -507,7 +410,8 @@ onTentativeBooking = () => {
 
 const mapDispatchToProps = (dispatch) => ({
   tentativeBooking: (id,orderId, data) => dispatch(actions.tentativeBookingAction(id,orderId, data)),
-  confirmPayment: (pnr) => dispatch(actions.confirmBookingAction(pnr)),
+  confirmPayment: (pnr, requestPayload) => dispatch(actions.confirmBookingAction(pnr, requestPayload)),
+  mobilePayment: (requestHeader) => dispatch(actions.mobilePaymentAction(requestHeader)),
 });
 
 export default connect(null, mapDispatchToProps)(payment)

@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* WayBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WayBusTests.m */; };
+		040E6BAF26372B25006DA49C /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 040E6BAE26372B25006DA49C /* libRNGoogleSignin.a */; };
+		041BFF4626375992001270FB /* libswiftWebKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 041BFF4526375992001270FB /* libswiftWebKit.tbd */; };
+		04873C8B2638356500FFE8FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04873C8A2638356500FFE8FE /* GoogleService-Info.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -15,11 +18,11 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* WayBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WayBusTests.m */; };
-		373DA36C7DE8B2E85D053634 /* libPods-WayBus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EC17BD63F1111EC193D1BA3 /* libPods-WayBus.a */; };
+		54D71A14F1C0107C737B234F /* libPods-WayBus-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 861BD390C4BE4E4FBEF7D14E /* libPods-WayBus-tvOSTests.a */; };
+		61FFA74E49688962DA449325 /* libPods-WayBus-WayBusTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCF64533564AD3C930032CD /* libPods-WayBus-WayBusTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8D4FC5FA0BB40D7CE14FCE47 /* libPods-WayBus-WayBusTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE27FA5163E865422261FB49 /* libPods-WayBus-WayBusTests.a */; };
-		9975BE50C868401754EE2A5D /* libPods-WayBus-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2666358CA8148D2B049126B9 /* libPods-WayBus-tvOS.a */; };
-		C75D2688F23E0A3D4741DF63 /* libPods-WayBus-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 465E5A88AAE78E34BAF4F2C4 /* libPods-WayBus-tvOSTests.a */; };
+		BDAC49755244A6E4E1DEFC1B /* libPods-WayBus-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E981602DF35716C4B07BEB8C /* libPods-WayBus-tvOS.a */; };
+		C55C26C6837BE61EA552259F /* libPods-WayBus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5566AFED0EAD24A7FA419AE /* libPods-WayBus.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,29 +47,34 @@
 		00E356EE1AD99517003FC87E /* WayBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WayBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* WayBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WayBusTests.m; sourceTree = "<group>"; };
+		040E6AC1263724B9006DA49C /* WayBus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WayBus.entitlements; path = WayBus/WayBus.entitlements; sourceTree = "<group>"; };
+		040E6BAE26372B25006DA49C /* libRNGoogleSignin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGoogleSignin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		040E6BB026372B4F006DA49C /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
+		041BFF4526375992001270FB /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
+		04873C8A2638356500FFE8FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WayBus/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		123C11FF55C3D1946FA14A23 /* Pods-WayBus-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-WayBus-tvOSTests/Pods-WayBus-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* WayBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WayBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = WayBus/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = WayBus/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = WayBus/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = WayBus/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WayBus/main.m; sourceTree = "<group>"; };
-		2666358CA8148D2B049126B9 /* libPods-WayBus-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WayBus-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		210B02A610ACC3ABBE1983B9 /* Pods-WayBus-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-WayBus-tvOSTests/Pods-WayBus-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* WayBus-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WayBus-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* WayBus-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WayBus-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EC17BD63F1111EC193D1BA3 /* libPods-WayBus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WayBus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		372DD19CD6D518163AF42A9B /* Pods-WayBus-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-WayBus-tvOS/Pods-WayBus-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		465E5A88AAE78E34BAF4F2C4 /* libPods-WayBus-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WayBus-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		547885D8615EC51429807586 /* Pods-WayBus-WayBusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-WayBusTests.release.xcconfig"; path = "Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests.release.xcconfig"; sourceTree = "<group>"; };
-		55DCC3CC1DF06226CD4EAD4A /* Pods-WayBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus.release.xcconfig"; path = "Target Support Files/Pods-WayBus/Pods-WayBus.release.xcconfig"; sourceTree = "<group>"; };
-		683E8B72764CE63BF02813AE /* Pods-WayBus-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-tvOS.release.xcconfig"; path = "Target Support Files/Pods-WayBus-tvOS/Pods-WayBus-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		4C551754C6E85F6FF56314CE /* Pods-WayBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus.debug.xcconfig"; path = "Target Support Files/Pods-WayBus/Pods-WayBus.debug.xcconfig"; sourceTree = "<group>"; };
+		7AC771F0BE29F7D6128C68B2 /* Pods-WayBus-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-tvOS.release.xcconfig"; path = "Target Support Files/Pods-WayBus-tvOS/Pods-WayBus-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = WayBus/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		98B9D307D89C6AE092D5E07E /* Pods-WayBus-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-WayBus-tvOSTests/Pods-WayBus-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		C7BA5BDAD2B8D410C625C591 /* Pods-WayBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus.debug.xcconfig"; path = "Target Support Files/Pods-WayBus/Pods-WayBus.debug.xcconfig"; sourceTree = "<group>"; };
-		DE27FA5163E865422261FB49 /* libPods-WayBus-WayBusTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WayBus-WayBusTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		861BD390C4BE4E4FBEF7D14E /* libPods-WayBus-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WayBus-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FE421E37E7D6BC9ED38D4F /* Pods-WayBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus.release.xcconfig"; path = "Target Support Files/Pods-WayBus/Pods-WayBus.release.xcconfig"; sourceTree = "<group>"; };
+		94372AADFF5D933276A356A2 /* Pods-WayBus-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-WayBus-tvOS/Pods-WayBus-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BFCF64533564AD3C930032CD /* libPods-WayBus-WayBusTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WayBus-WayBusTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6F8E1EBAE0325001D25F935 /* Pods-WayBus-WayBusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-WayBusTests.release.xcconfig"; path = "Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests.release.xcconfig"; sourceTree = "<group>"; };
+		E1F0507214F873C13C5CF859 /* Pods-WayBus-WayBusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-WayBusTests.debug.xcconfig"; path = "Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5566AFED0EAD24A7FA419AE /* libPods-WayBus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WayBus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E981602DF35716C4B07BEB8C /* libPods-WayBus-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WayBus-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F13705B848F16F6176148733 /* Pods-WayBus-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-WayBus-tvOSTests/Pods-WayBus-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FD69EF76B0FA717350F2947C /* Pods-WayBus-WayBusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayBus-WayBusTests.debug.xcconfig"; path = "Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D4FC5FA0BB40D7CE14FCE47 /* libPods-WayBus-WayBusTests.a in Frameworks */,
+				61FFA74E49688962DA449325 /* libPods-WayBus-WayBusTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				373DA36C7DE8B2E85D053634 /* libPods-WayBus.a in Frameworks */,
+				041BFF4626375992001270FB /* libswiftWebKit.tbd in Frameworks */,
+				040E6BAF26372B25006DA49C /* libRNGoogleSignin.a in Frameworks */,
+				C55C26C6837BE61EA552259F /* libPods-WayBus.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9975BE50C868401754EE2A5D /* libPods-WayBus-tvOS.a in Frameworks */,
+				BDAC49755244A6E4E1DEFC1B /* libPods-WayBus-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C75D2688F23E0A3D4741DF63 /* libPods-WayBus-tvOSTests.a in Frameworks */,
+				54D71A14F1C0107C737B234F /* libPods-WayBus-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +135,9 @@
 		13B07FAE1A68108700A75B9A /* WayBus */ = {
 			isa = PBXGroup;
 			children = (
+				040E6AC1263724B9006DA49C /* WayBus.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				04873C8A2638356500FFE8FE /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -139,12 +151,15 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				041BFF4526375992001270FB /* libswiftWebKit.tbd */,
+				040E6BB026372B4F006DA49C /* GoogleAppMeasurement.xcframework */,
+				040E6BAE26372B25006DA49C /* libRNGoogleSignin.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				2EC17BD63F1111EC193D1BA3 /* libPods-WayBus.a */,
-				DE27FA5163E865422261FB49 /* libPods-WayBus-WayBusTests.a */,
-				2666358CA8148D2B049126B9 /* libPods-WayBus-tvOS.a */,
-				465E5A88AAE78E34BAF4F2C4 /* libPods-WayBus-tvOSTests.a */,
+				E5566AFED0EAD24A7FA419AE /* libPods-WayBus.a */,
+				BFCF64533564AD3C930032CD /* libPods-WayBus-WayBusTests.a */,
+				E981602DF35716C4B07BEB8C /* libPods-WayBus-tvOS.a */,
+				861BD390C4BE4E4FBEF7D14E /* libPods-WayBus-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,14 +167,14 @@
 		759957CCF469DFFC07FFC893 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C7BA5BDAD2B8D410C625C591 /* Pods-WayBus.debug.xcconfig */,
-				55DCC3CC1DF06226CD4EAD4A /* Pods-WayBus.release.xcconfig */,
-				FD69EF76B0FA717350F2947C /* Pods-WayBus-WayBusTests.debug.xcconfig */,
-				547885D8615EC51429807586 /* Pods-WayBus-WayBusTests.release.xcconfig */,
-				372DD19CD6D518163AF42A9B /* Pods-WayBus-tvOS.debug.xcconfig */,
-				683E8B72764CE63BF02813AE /* Pods-WayBus-tvOS.release.xcconfig */,
-				F13705B848F16F6176148733 /* Pods-WayBus-tvOSTests.debug.xcconfig */,
-				98B9D307D89C6AE092D5E07E /* Pods-WayBus-tvOSTests.release.xcconfig */,
+				4C551754C6E85F6FF56314CE /* Pods-WayBus.debug.xcconfig */,
+				92FE421E37E7D6BC9ED38D4F /* Pods-WayBus.release.xcconfig */,
+				E1F0507214F873C13C5CF859 /* Pods-WayBus-WayBusTests.debug.xcconfig */,
+				D6F8E1EBAE0325001D25F935 /* Pods-WayBus-WayBusTests.release.xcconfig */,
+				94372AADFF5D933276A356A2 /* Pods-WayBus-tvOS.debug.xcconfig */,
+				7AC771F0BE29F7D6128C68B2 /* Pods-WayBus-tvOS.release.xcconfig */,
+				210B02A610ACC3ABBE1983B9 /* Pods-WayBus-tvOSTests.debug.xcconfig */,
+				123C11FF55C3D1946FA14A23 /* Pods-WayBus-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -204,11 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "WayBusTests" */;
 			buildPhases = (
-				EAFB709E91EE183E00E642BD /* [CP] Check Pods Manifest.lock */,
+				D9C48F66BB5C46685D91E1E6 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				B6691A4ACAE16E2766D72F87 /* [CP] Copy Pods Resources */,
+				33B59A2635D323F8A1F214A0 /* [CP] Embed Pods Frameworks */,
+				728A0BD209F8E0BB92D47F24 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,13 +240,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "WayBus" */;
 			buildPhases = (
-				C9D93B4C8D69291EA358A123 /* [CP] Check Pods Manifest.lock */,
+				C1896423828C5D2D1F948839 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				1AF3D382107E405CD94D480C /* [CP] Copy Pods Resources */,
+				764C31249ED43F818999D15C /* [CP] Embed Pods Frameworks */,
+				A04ECDB545D72DAB31205F4C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,7 +262,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "WayBus-tvOS" */;
 			buildPhases = (
-				7527AC2C7A2914B392F99C71 /* [CP] Check Pods Manifest.lock */,
+				5A0C6E3C8D72A87569DD5943 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -265,7 +282,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "WayBus-tvOSTests" */;
 			buildPhases = (
-				BA83EE3E0CE16B09ABC30CFA /* [CP] Check Pods Manifest.lock */,
+				4D4CE68139469A791FF98C8A /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -286,7 +303,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -307,7 +324,7 @@
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "WayBus" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -339,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04873C8B2638356500FFE8FE /* GoogleService-Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
@@ -374,25 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		1AF3D382107E405CD94D480C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WayBus/Pods-WayBus-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WayBus/Pods-WayBus-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -408,47 +408,24 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		7527AC2C7A2914B392F99C71 /* [CP] Check Pods Manifest.lock */ = {
+		33B59A2635D323F8A1F214A0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WayBus-tvOS-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6691A4ACAE16E2766D72F87 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA83EE3E0CE16B09ABC30CFA /* [CP] Check Pods Manifest.lock */ = {
+		4D4CE68139469A791FF98C8A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -470,7 +447,80 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C9D93B4C8D69291EA358A123 /* [CP] Check Pods Manifest.lock */ = {
+		5A0C6E3C8D72A87569DD5943 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WayBus-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		728A0BD209F8E0BB92D47F24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WayBus-WayBusTests/Pods-WayBus-WayBusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		764C31249ED43F818999D15C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WayBus/Pods-WayBus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WayBus/Pods-WayBus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WayBus/Pods-WayBus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A04ECDB545D72DAB31205F4C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WayBus/Pods-WayBus-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WayBus/Pods-WayBus-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WayBus/Pods-WayBus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1896423828C5D2D1F948839 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -492,7 +542,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EAFB709E91EE183E00E642BD /* [CP] Check Pods Manifest.lock */ = {
+		D9C48F66BB5C46685D91E1E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -607,7 +657,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD69EF76B0FA717350F2947C /* Pods-WayBus-WayBusTests.debug.xcconfig */;
+			baseConfigurationReference = E1F0507214F873C13C5CF859 /* Pods-WayBus-WayBusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -617,7 +667,11 @@
 				);
 				INFOPLIST_FILE = WayBusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -631,14 +685,18 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 547885D8615EC51429807586 /* Pods-WayBus-WayBusTests.release.xcconfig */;
+			baseConfigurationReference = D6F8E1EBAE0325001D25F935 /* Pods-WayBus-WayBusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = WayBusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -652,20 +710,31 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7BA5BDAD2B8D410C625C591 /* Pods-WayBus.debug.xcconfig */;
+			baseConfigurationReference = 4C551754C6E85F6FF56314CE /* Pods-WayBus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WayBus/WayBus.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WayBus/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				MARKETING_VERSION = 1.0.0;
+				NEW_SETTING = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.waybus;
 				PRODUCT_NAME = WayBus;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -675,19 +744,30 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55DCC3CC1DF06226CD4EAD4A /* Pods-WayBus.release.xcconfig */;
+			baseConfigurationReference = 92FE421E37E7D6BC9ED38D4F /* Pods-WayBus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WayBus/WayBus.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 43J4DJ953M;
 				INFOPLIST_FILE = WayBus/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				MARKETING_VERSION = 1.0.0;
+				NEW_SETTING = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.waybus;
 				PRODUCT_NAME = WayBus;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -696,7 +776,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 372DD19CD6D518163AF42A9B /* Pods-WayBus-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 94372AADFF5D933276A356A2 /* Pods-WayBus-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -708,7 +788,10 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "WayBus-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -724,7 +807,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 683E8B72764CE63BF02813AE /* Pods-WayBus-tvOS.release.xcconfig */;
+			baseConfigurationReference = 7AC771F0BE29F7D6128C68B2 /* Pods-WayBus-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -736,7 +819,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "WayBus-tvOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -752,7 +838,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F13705B848F16F6176148733 /* Pods-WayBus-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 210B02A610ACC3ABBE1983B9 /* Pods-WayBus-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -763,7 +849,11 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "WayBus-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -779,7 +869,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98B9D307D89C6AE092D5E07E /* Pods-WayBus-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 123C11FF55C3D1946FA14A23 /* Pods-WayBus-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -790,7 +880,11 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "WayBus-tvOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -852,8 +946,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
@@ -906,8 +1003,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
@@ -929,7 +1029,7 @@
 				00E356F71AD99517003FC87E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "WayBus" */ = {
 			isa = XCConfigurationList;
@@ -938,7 +1038,7 @@
 				13B07F951A680F5B00A75B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "WayBus-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -947,7 +1047,7 @@
 				2D02E4981E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "WayBus-tvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -956,7 +1056,7 @@
 				2D02E49A1E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "WayBus" */ = {
 			isa = XCConfigurationList;
@@ -965,7 +1065,7 @@
 				83CBBA211A601CBA00E9B192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

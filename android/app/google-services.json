@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "961099642355",
+    "firebase_url": "https://way-bus-286009.firebaseio.com",
+    "project_id": "way-bus-286009",
+    "storage_bucket": "way-bus-286009.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961099642355:android:3ac6c9ac46094190bc0e86",
+        "android_client_info": {
+          "package_name": "com.waybus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961099642355-arr6ka7ok6jeefk6u3qvagj1rh2rjlb2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.waybus",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "961099642355-roiit13v2o0iduv1k6hum1v0tv7o2qr1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.waybus",
+            "certificate_hash": "182f2dc756b67546f0e4cc4e4890e8b1cf98de4f"
+          }
+        },
+        {
+          "client_id": "961099642355-hl0ddkf3em620amvit8qmq3e0e06qri5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0YOYy4eYceRHr_UQz1OMNSAAwBVVwojw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961099642355-aj2k8ek5tqmcuanoi32e6nhig5e5ueeq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -21,7 +21,7 @@ class AppStack extends Component {
     return (
       <NavigationContainer ref={navigationRef}>
 
-        <Stack.Navigator screenOptions={{  ...(Platform.OS === "android" && TransitionPresets.SlideFromRightIOS) }} initialRouteName={'LoginStack'}>
+        <Stack.Navigator initialRouteName={'LoginStack'}>
           <Stack.Screen
             name="LoginStack"
             component={LoginStack}

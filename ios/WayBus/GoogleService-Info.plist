@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>961099642355-jfheks7d2m00l6dgc6mrq27oes00sngd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.961099642355-jfheks7d2m00l6dgc6mrq27oes00sngd</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>961099642355-arr6ka7ok6jeefk6u3qvagj1rh2rjlb2.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAbUau7ofmON-kC5wi19Utp6uMjagGlCCw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>961099642355</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.waybus</string>
+	<key>PROJECT_ID</key>
+	<string>way-bus-286009</string>
+	<key>STORAGE_BUCKET</key>
+	<string>way-bus-286009.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:961099642355:ios:96aa034f6b548455bc0e86</string>
+	<key>DATABASE_URL</key>
+	<string>https://way-bus-286009.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { hp, wp } from '../../utils/heightWidthRatio';
-import { Fonts, Images } from '../../theme';
+import { Fonts, Images, Colors } from '../../theme';
 import colors from '../../theme/colors';
 
 const styles = StyleSheet.create({
@@ -77,7 +77,27 @@ const styles = StyleSheet.create({
         resizeMode:'contain', 
         alignSelf:'center', 
         marginBottom:hp(10)
-    }
+    },
+    grayBoldContent: {
+        color: Colors.grey9A,
+        fontWeight: 'bold',
+        fontSize: Fonts.size.font15,
+    },
+    smallIcon: {
+        width: wp(20),
+        height: wp(20),
+        resizeMode: 'contain',
+        margin:8
+    },
+    grayContent : {
+        color: Colors.grey4B,
+        fontWeight : 'bold',
+        fontSize: Fonts.size.font15,
+    },
+    lightGrayContent : {
+        color: Colors.grey4B,
+        fontSize: Fonts.size.font13,
+    },
 
 })
 

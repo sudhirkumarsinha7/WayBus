@@ -15,7 +15,7 @@ export default function TabbarNavigation() {
   return (
     <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Booking" component={Booking} />
+      <Tab.Screen name="Booking" component={Booking} options={{ title: 'My Booking',}}/>
       <Tab.Screen name="Help" component={Help} />
       <Tab.Screen name="More" component={More} />
     </Tab.Navigator>
