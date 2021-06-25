@@ -6,6 +6,7 @@ import Home from '../../screens/home/home';
 import busAvailability from '../../screens/home/busAvailability/busAvailability';
 import seatSelection from '../../screens/home/seatSelection/seatSelection';
 import AddPickupDrop from '../../screens/home/addPickupDrop/addPickupDrop';
+import PickupDrop from '../../screens/home/addPickupDrop/PickupDrop';
 import addPassenger from '../../screens/home/addPassenger/addPassenger';
 import payment from '../../screens/home/payment/payment';
 import payment2 from '../../screens/home/payment2/payment2';
@@ -23,6 +24,7 @@ function ActivityStackNavigator({ navigation, route }) {
           <Stack.Screen name="busAvailability" component={busAvailability} options={{ headerShown: false  }} />
           <Stack.Screen name="seatSelection" component={seatSelection} options={{ headerShown: false  }} />
           <Stack.Screen name="AddPickupDrop" component={AddPickupDrop} options={{ headerShown: false  }} />
+          <Stack.Screen name="PickupDrop" component={PickupDrop} options={{ headerShown: false  }} />
           <Stack.Screen name="AddPassenger" component={addPassenger} options={{ headerShown: false  }} />
           {/*<Stack.Screen name="AddPassenger" component={addPassenger} options={{ headerShown: false  }} />*/}
           <Stack.Screen name="Payment" component={payment} options={{ headerShown: false  }} />

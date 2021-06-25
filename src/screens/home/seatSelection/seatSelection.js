@@ -577,11 +577,23 @@ class seatSelection extends Component {
                 <Text style={styles.blueContent}>Cancellation Policy</Text>
               </TouchableOpacity>
 
-              <View style={styles.blueBorderBtn}>
+              <TouchableOpacity style={styles.blueBorderBtn}
+              onPress ={()=>{ this.props.navigation.navigate('PickupDrop', {
+                scheduleId: this.state.scheduleId,
+                busDetails: this.props.route.params.busDetails,
+                boarding_stages: boardingStages,
+                dropoff_stages: droppingStages,
+                selectedSeats: selectedSeats,
+                date: this.props.route.params.apiDate,
+                originId: this.props.route.params.originId,
+                destId: this.props.route.params.destId,
+                fareInfo: this.state.fareInfo,
+              })
+                         }           }>
                 <Text style={styles.blueContent}>
                   Boarding & Dropping Point
                 </Text>
-              </View>
+              </TouchableOpacity>
             </View>
 
             <View style={{flex: 1, backgroundColor: Colors.greyED}}>
