@@ -421,7 +421,7 @@ class Home extends Component {
         <View style={styles.container}>
           <View style={styles.headerView}>
             <Text style={styles.title}>Home</Text>
-            <Image style={styles.appLogo} source={Images.waybusWhiteLogo} />
+            {/* <Image style={styles.appLogo} source={Images.waybusWhiteLogo} /> */}
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('notification')}>
               <Image style={styles.appLogo} source={Images.notification} />

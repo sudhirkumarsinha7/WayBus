@@ -22,7 +22,7 @@ import colors from '../../../theme/colors';
 import styles from './styles';
 import * as actions from '../../../redux/action';
 import {connect} from 'react-redux';
-import * as ReadSms from 'react-native-read-sms/ReadSms';
+// import * as ReadSms from 'react-native-read-sms/ReadSms';
 class Otp extends Component {
   constructor(props) {
     super(props);
@@ -38,32 +38,32 @@ class Otp extends Component {
   componentDidMount = async () => {
     this.onCount();
     console.log('componentDidMount result122');
-    this.startReadSMS();
+    // this.startReadSMS();
   };
-  startReadSMS = async () => {
-    console.log('startReadSMS 1');
-    const hasPermission = await ReadSms.requestReadSMSPermission();
-    console.log('startReadSMS 2');
-    if (hasPermission) {
-      console.log('startReadSMS 3');
-      ReadSms.startReadSMS((status, sms, error) => {
-        if (status == 'success') {
-          // console.log('Great!! you have received new sms:', sms);
-          console.log(sms);
-          const smsSplit = sms?.split('.');
-          const smsFirstLine = smsSplit[0];
-          var digit = smsFirstLine.replace(/\D/g, '');
-          digit = digit + '';
-          console.log('digit ' + smsFirstLine);
-          console.log('digit ' + digit);
-          digit = digit.substring(0, 4);
-          this.setState({code: digit});
-        }
-      });
-    } else {
-      console.log('startReadSMS 4');
-    }
-  };
+  // startReadSMS = async () => {
+  //   console.log('startReadSMS 1');
+  //   const hasPermission = await ReadSms.requestReadSMSPermission();
+  //   console.log('startReadSMS 2');
+  //   if (hasPermission) {
+  //     console.log('startReadSMS 3');
+  //     ReadSms.startReadSMS((status, sms, error) => {
+  //       if (status == 'success') {
+  //         // console.log('Great!! you have received new sms:', sms);
+  //         console.log(sms);
+  //         const smsSplit = sms?.split('.');
+  //         const smsFirstLine = smsSplit[0];
+  //         var digit = smsFirstLine.replace(/\D/g, '');
+  //         digit = digit + '';
+  //         console.log('digit ' + smsFirstLine);
+  //         console.log('digit ' + digit);
+  //         digit = digit.substring(0, 4);
+  //         this.setState({code: digit});
+  //       }
+  //     });
+  //   } else {
+  //     console.log('startReadSMS 4');
+  //   }
+  // };
 
   resetStack = (whichStack) => {
     this.props.navigation.dispatch(

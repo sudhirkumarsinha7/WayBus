@@ -93,7 +93,6 @@ class busAvailability extends Component {
     console.log(value);
     var selectedArray = this.state.selectedBusTypes;
     // console.log(selectedArray);
-
     var res = selectedArray.some(item => (item == value));
     if (res) {
       selectedArray.splice(selectedArray.indexOf(value), 1);
@@ -103,12 +102,13 @@ class busAvailability extends Component {
 
     this.setState({ selectedBusTypes: selectedArray });
     // console.log(selectedArray);
+    // alert(JSON.stringify(selectedArray))
 
     var finalArr = [];
     this.state.totalAvailableBuses.forEach(itemOld => {
       selectedArray.forEach(val => {
         if (itemOld[8].includes(val)) {
-          var res = finalArr.some(item => (item == itemOld));
+          var res = finalArr.map(item => (item == itemOld));
           if (!res) {
             finalArr = [...finalArr, itemOld];
           }
